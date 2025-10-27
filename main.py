@@ -54,6 +54,9 @@ async def yt_dlp_endpoint(video_id: str):
         info = await run_yt_dlp(url)
     return info
 
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
 
 if __name__ == "__main__":
     import uvicorn
